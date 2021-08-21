@@ -1,0 +1,43 @@
+<head>
+    <title>Cash Register</title>
+</head>
+<body onload="onLoadFunction()">
+<link rel="stylesheet" href="index.css"/>
+<script type="text/javascript" src="index.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<div class="cashregister" id="cashregister">
+    <h2>Cash Regsiter Manager</h2>
+    <p style="padding:2rem; font-size: 15px;">Enter the bill amount and cash given by the customer and know minimum number of notes to return.</p>
+    <p style="margin-top: 0rem;">Bill Amount:</p>
+    <input type="text" class="BillAmount" id="BillAmount"/>
+    <button type="button" class="Next" id="Next" onclick="showBillAmount()">Next</button>
+    <p id="cashGivenheading" class="cashGivenheading">Cash Given:</p>
+    <input type="text" class="cashGiven" id="cashGiven"/> 
+    <button type="button" class="Check" id="Check"onclick="calculateCheck()">Check</button>
+    <p id="noBalance" class="noBalance">No Balance</p>
+    <p id="returnChangeheading">Return Change</p>
+    <table id="returnChange">
+        <tr>
+               <th>No.ofNotes</th>
+               <th id="2000notes" class="notes"></th>
+               <th id="500notes" class="notes"></th>
+               <th id="100notes" class="notes"></th>
+               <th id="20notes" class="notes"></th>
+               <th id="10notes" class="notes"></th>
+               <th id="5notes" class="notes"></th>
+               <th id="1notes" class="notes"></th> 
+        </tr>
+        <tr>
+            <th>Note</th> 
+            <th>2000</th>
+            <th>500</th>
+            <th>100</th>
+            <th>20</th>
+            <th>10</th>
+            <th>5</th>
+            <th>1</th>
+        </tr>
+    </table>
+</div>
+</body>
