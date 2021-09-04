@@ -1,24 +1,37 @@
 <head>
     <title>Cash Register</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://cdn.usebootstrap.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="shortcut icon" href="favicon1.gif" type="image/x-icon" />
+
 </head>
 <body onload="onLoadFunction()">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="index.css"/>
 <script type="text/javascript" src="index.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-<div class="cashregister" id="cashregister">
+<div class="cashregister col-md-6 offset-md-3" id="cashregister">
     <h2>Cash Regsiter Manager</h2>
-    <p style="padding:2rem; font-size: 15px;">Enter the bill amount and cash given by the customer and know minimum number of notes to return.</p>
-    <p style="margin-top: 0rem;">Bill Amount:</p>
-    <input type="text" class="BillAmount" id="BillAmount"/>
-    <button type="button" class="Next" id="Next" onclick="showBillAmount()">Next</button>
-    <p id="cashGivenheading" class="cashGivenheading">Cash Given:</p>
-    <input type="text" class="cashGiven" id="cashGiven"/> 
-    <button type="button" class="Check" id="Check"onclick="calculateCheck()">Check</button>
+    <p>Enter the bill amount and cash given by the customer and know minimum number of notes to return.</p>
+    <p >Bill Amount:</p>
+    <input type="text" class="inputText col-8 offset-2 " id="BillAmount"/>
+    <button type="button" class="Next col-2 offset-2 mt-2" id="Next" onclick="showBillAmount()">Next</button>
+    <p id="cashGivenheading" class="cashGivenheading  col-8 offset-2 ">Cash Given:</p>
+    <input type="text" class="inputText col-8 col-2 offset-2 mt-2" id="cashGiven"/> 
+    <button type="button" class="Check col-2 offset-2 mt-2" id="Check"onclick="calculateCheck()">Check</button>
     <p id="noBalance" class="noBalance">No Balance</p>
-    <p id="returnChangeheading">Return Change</p>
-    <table id="returnChange">
-        <tr>
+    <p id="cashAmountLessThanBillAmount">Cash amount is less than Bill amount</p>
+    <div class="returnChangeContainer " id="returnChangeContainer">
+    <p>Return Change</p>
+    <div>
+    <table class="table  table-striped table-bordered table-sm">
+        <thead>
+        <tr >
                <th>No.ofNotes</th>
                <th id="2000notes" class="notes"></th>
                <th id="500notes" class="notes"></th>
@@ -28,7 +41,9 @@
                <th id="5notes" class="notes"></th>
                <th id="1notes" class="notes"></th> 
         </tr>
-        <tr>
+    </thead>
+    <tbody>
+        <tr  >
             <th>Note</th> 
             <th>2000</th>
             <th>500</th>
@@ -38,6 +53,9 @@
             <th>5</th>
             <th>1</th>
         </tr>
+    </tbody>
     </table>
+</div>
+</div>
 </div>
 </body>

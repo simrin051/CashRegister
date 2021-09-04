@@ -4,8 +4,8 @@ document.getElementById("cashGiven").style.display = "none";
 document.getElementById("cashGivenheading").style.display = "none";
 document.getElementById("Check").style.display = "none";
 document.getElementById("noBalance").style.display = "none";
-document.getElementById("returnChangeheading").style.display = "none";
-document.getElementById("returnChange").style.display = "none";
+document.getElementById("returnChangeContainer").style.display = "none";
+document.getElementById("cashAmountLessThanBillAmount").style.display = "none";
 }
 
 function showBillAmount()
@@ -16,6 +16,8 @@ function showBillAmount()
     document.getElementById("cashGivenheading").style.display = "block";
     document.getElementById("Next").style.display = "none";
     document.getElementById("Check").style.display = "block";
+ 
+    
 }
 function calculateCheck()
 {
@@ -29,13 +31,25 @@ function calculateCheck()
         document.getElementById("noBalance").style.display= "block";
         document.getElementById("noBalance").style.marginTop= "1rem";
         document.getElementById("cashregister").style.height = "600px";
- 
+        
+    }
+    else if(balance > 0)
+    {
+        document.getElementById("returnChangeContainer").style.display = "none";
+        document.getElementById("cashAmountLessThanBillAmount").style.display= "block";
+        document.getElementById("noBalance").style.marginTop= "1rem";
+        document.getElementById("cashregister").style.height = "600px";
+
+
+        
     }
     else
     {
+        
+        console.log("cash given > bill amount");
+        document.getElementById("cashAmountLessThanBillAmount").style.display= "none";
         document.getElementById("noBalance").style.display = "none";
-        document.getElementById("returnChangeheading").style.display = "block";
-        document.getElementById("returnChange").style.display = "block";
+        document.getElementById("returnChangeContainer").style.display = "block";
         document.getElementById("cashregister").style.height = "100vh";
         balance=-balance;
        
