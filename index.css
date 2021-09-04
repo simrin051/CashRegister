@@ -38,10 +38,16 @@ table
 
 }
 
-@media only screen and (max-width: 600px) {
-/**
-.returnChangeContainer
+button
 {
-    overflow: scroll;
-}  **/
+    background-color: white;
+    padding:0.5rem;
+}
+@media only screen and (max-width: 600px) {
+    .Check
+    {
+        background-color: white;
+        padding:0.5rem;
+        padding-right: 0.5rem;
+    }
 }
