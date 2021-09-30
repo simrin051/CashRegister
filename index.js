@@ -26,6 +26,7 @@ function tableRefresh()
     document.getElementById('2000notes').innerText="";
     document.getElementById('500notes').innerText="";
     document.getElementById('100notes').innerText="";
+    document.getElementById('20notes').innerText="";
     document.getElementById('10notes').innerText="";
     document.getElementById('5notes').innerText="";
     document.getElementById('1notes').innerText="";
