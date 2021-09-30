@@ -19,6 +19,18 @@ function showBillAmount()
  
     
 }
+
+function tableRefresh()
+{
+
+    document.getElementById('2000notes').innerText="";
+    document.getElementById('500notes').innerText="";
+    document.getElementById('100notes').innerText="";
+    document.getElementById('10notes').innerText="";
+    document.getElementById('5notes').innerText="";
+    document.getElementById('1notes').innerText="";
+}
+
 function calculateCheck()
 {
     console.log("Inside calculate check");
@@ -27,7 +39,6 @@ function calculateCheck()
     console.log("Balance "+balance);   
     if(balance==0)
     {
-        console.log("Balance "+balance);
         document.getElementById("noBalance").style.display= "block";
         document.getElementById("noBalance").style.marginTop= "1rem";
         document.getElementById("cashregister").style.height = "600px";
@@ -39,20 +50,26 @@ function calculateCheck()
         document.getElementById("cashAmountLessThanBillAmount").style.display= "block";
         document.getElementById("noBalance").style.marginTop= "1rem";
         document.getElementById("cashregister").style.height = "600px";
-
-
+        var table = document.getElementById ("returnChangeContainer");
+            table.refresh ();
+        console.log("table refreshed");
         
     }
     else
     {
         
+        tableRefresh();
         console.log("cash given > bill amount");
         document.getElementById("cashAmountLessThanBillAmount").style.display= "none";
         document.getElementById("noBalance").style.display = "none";
         document.getElementById("returnChangeContainer").style.display = "block";
         document.getElementById("cashregister").style.height = "100vh";
         balance=-balance;
-       
+        var table = document.getElementById ("returnChangeContainer");
+        var count=0;
+        while(balance >= 0 && count <= 3)
+        {
+            ++count;
         if((balance) >= 2000)
         {
             console.log("Inside balance >=2000");
@@ -79,6 +96,7 @@ function calculateCheck()
         }
         if(balance >= 10)
         {
+            console.log("inide balance >=10");
             document.getElementById('10notes').innerText=Math.floor(balance/10);
             balance=balance-(Math.floor(balance/10)*10);;
         }
@@ -93,5 +111,6 @@ function calculateCheck()
             document.getElementById('1notes').innerText=Math.floor(balance/1);
             balance=balance-(Math.floor(balance/1)*1);;
         }
+    }
     }
 }
